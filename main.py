@@ -22,10 +22,10 @@ def processingPhoto(message):
 
 @bot.callback_query_handler(func = lambda callback: True)
 def callback_message(callback):
-    if callback == "delete":
+    if callback.data == "delete":
         bot.delete_message(callback.message.chat.id, callback.message.message_id - 1)
-    elif callback == "edit":
-        bot.edit_message("Мы изменили твое сообщение, и ты нам за это нчиего не сделаешь!!!", callback.message.chat.id, callback.message.message_id-3)
+    elif callback.data == "edit":
+        bot.edit_message_text("Мы изменили свое сообщение, и ты нам за это нчиего не сделаешь!!!", callback.message.chat.id, callback.message.message_id )
 
 
 @bot.message_handler()
