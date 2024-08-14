@@ -1,7 +1,7 @@
 import sqlite3 as sq
 
-con = sq.connect("first.db")
-cur = con.cursor()
+with sq.connect("first.db") as con:
+    cur = con.cursor()
 
 cur.execute("""
 """)
